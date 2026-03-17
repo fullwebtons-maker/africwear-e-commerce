@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* AfricWear — Elegant African Fashion E-Commerce */
+    /* Palette: Ivory white, charcoal black, warm gold */
+
+    --background: 40 25% 97%;          /* #FAFAF8 warm ivory */
+    --foreground: 0 0% 10%;            /* #1A1A1A near black */
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 10%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 10%;
+    --primary: 0 0% 10%;               /* #1A1A1A charcoal */
+    --primary-foreground: 0 0% 100%;   /* white */
+    --secondary: 38 40% 92%;           /* #F5F0E8 warm beige */
+    --secondary-foreground: 0 0% 10%;
+    --muted: 38 20% 94%;
+    --muted-foreground: 0 0% 45%;
+    --accent: 35 47% 60%;              /* #C8A96E warm gold */
+    --accent-foreground: 0 0% 10%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 38 20% 88%;
+    --input: 38 20% 88%;
+    --ring: 35 47% 60%;                /* gold ring */
+
+    --chart-1: 35 47% 60%;
+    --chart-2: 0 0% 10%;
+    --chart-3: 38 40% 72%;
+    --chart-4: 0 0% 60%;
+    --chart-5: 38 40% 50%;
+
+    --sidebar: 38 30% 95%;
+    --sidebar-foreground: 0 0% 10%;
+    --sidebar-primary: 0 0% 10%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 35 47% 60%;
+    --sidebar-accent-foreground: 0 0% 10%;
+    --sidebar-border: 38 20% 88%;
+    --sidebar-ring: 35 47% 60%;
+
+    /* Fonts */
+    --font-sans: 'DM Sans', sans-serif;
+    --font-serif: 'Playfair Display', serif;
+    --font-mono: monospace;
+
+    /* Shadows */
+    --shadow-2xs: 0px 4px 8px -1px hsl(0 0% 0% / 0.05);
+    --shadow-xs: 0px 4px 8px -1px hsl(0 0% 0% / 0.05);
+    --shadow-sm: 0px 4px 8px -1px hsl(0 0% 0% / 0.10), 0px 1px 2px -2px hsl(0 0% 0% / 0.10);
+    --shadow: 0px 4px 8px -1px hsl(0 0% 0% / 0.10), 0px 1px 2px -2px hsl(0 0% 0% / 0.10);
+    --shadow-md: 0px 4px 8px -1px hsl(0 0% 0% / 0.10), 0px 2px 4px -2px hsl(0 0% 0% / 0.10);
+    --shadow-lg: 0px 4px 8px -1px hsl(0 0% 0% / 0.10), 0px 4px 6px -2px hsl(0 0% 0% / 0.10);
+    --shadow-xl: 0px 4px 8px -1px hsl(0 0% 0% / 0.10), 0px 8px 10px -2px hsl(0 0% 0% / 0.10);
+    --shadow-2xl: 0px 4px 8px -1px hsl(0 0% 0% / 0.25);
+
+    /* Misc */
+    --tracking-normal: 0em;
+    --spacing: 0.25rem;
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 7%;
+    --foreground: 38 30% 92%;
+    --card: 0 0% 11%;
+    --card-foreground: 38 30% 92%;
+    --popover: 0 0% 11%;
+    --popover-foreground: 38 30% 92%;
+    --primary: 38 30% 90%;
+    --primary-foreground: 0 0% 10%;
+    --secondary: 0 0% 16%;
+    --secondary-foreground: 38 30% 80%;
+    --muted: 0 0% 14%;
+    --muted-foreground: 0 0% 55%;
+    --accent: 35 47% 55%;
+    --accent-foreground: 0 0% 10%;
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --border: 0 0% 20%;
+    --input: 0 0% 20%;
+    --ring: 35 47% 55%;
+
+    --chart-1: 35 47% 55%;
+    --chart-2: 38 30% 75%;
+    --chart-3: 0 0% 70%;
+    --chart-4: 35 47% 40%;
+    --chart-5: 38 40% 50%;
+
+    --sidebar: 0 0% 9%;
+    --sidebar-foreground: 38 30% 92%;
+    --sidebar-primary: 38 30% 90%;
+    --sidebar-primary-foreground: 0 0% 10%;
+    --sidebar-accent: 35 47% 55%;
+    --sidebar-accent-foreground: 0 0% 10%;
+    --sidebar-border: 0 0% 16%;
+    --sidebar-ring: 35 47% 55%;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-sans), 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+    letter-spacing: var(--tracking-normal);
+  }
+}
+
+.font-serif {
+  font-family: 'Playfair Display', serif;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.4s ease-out both;
+}
+
+.animate-slide-up {
+  animation: slideUp 0.5s ease-out both;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Gold shimmer for product cards */
+.gold-line {
+  background: linear-gradient(90deg, hsl(35 47% 60%), hsl(38 60% 72%), hsl(35 47% 60%));
+}
+
+/* Hover card lift */
+.card-hover {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.card-hover:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px -8px hsl(0 0% 0% / 0.12);
+}
+
+/* Line clamp */
+.line-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
